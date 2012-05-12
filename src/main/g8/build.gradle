@@ -1,0 +1,19 @@
+apply plugin: 'groovy'
+apply plugin: 'eclipse'
+apply plugin: 'idea'
+
+version = '$version$'
+
+repositories { 
+  mavenCentral()
+}
+
+dependencies { 
+  compile gradleApi()
+  groovy "org.codehaus.groovy:groovy:$groovy_version$"
+  testCompile "junit:junit:4.+"
+}
+
+task wrapper(type: Wrapper) { 
+  gradleVersion = '$gradle_version$'
+}
